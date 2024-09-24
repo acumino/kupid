@@ -1,6 +1,8 @@
 module github.com/gardener/kupid
 
-go 1.19
+go 1.23.0
+toolchain go1.23.1
+
 
 require (
 	github.com/gardener/gardener v1.47.0
