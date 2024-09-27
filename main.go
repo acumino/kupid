@@ -200,7 +200,7 @@ func doRegisterWebhooks(mgr manager.Manager, certDir, namespace string, timeoutS
 	setupLog.Info("Registering TLS certificates if necessary.")
 
 	caBundle, err := extensionsCertificates.GenerateUnmanagedCertificates(
-		"provider-extensions",
+		webhookName,
 		certDir,
 		extensionswebhook.ModeService,
 		"",
