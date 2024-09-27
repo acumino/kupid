@@ -196,7 +196,6 @@ func doRegisterWebhooks(mgr manager.Manager, certDir, namespace string, timeoutS
 	}
 
 	ctx := context.TODO()
-
 	setupLog.Info("Registering TLS certificates if necessary.")
 
 	caBundle, err := extensionsCertificates.GenerateUnmanagedCertificates(
@@ -226,7 +225,7 @@ func doRegisterWebhooks(mgr manager.Manager, certDir, namespace string, timeoutS
 func buildWebhookClientConfig(namespace string, caBundle []byte) admissionregistrationv1.WebhookClientConfig {
 	var path = webhook.WebhookPath
 	return admissionregistrationv1.WebhookClientConfig{
-		CABundle: caBundle,
+		// CABundle: caBundle,
 		Service: &admissionregistrationv1.ServiceReference{
 			Namespace: namespace,
 			Name:      webhookFullName,
